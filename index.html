@@ -1,53 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Happy New Year 🎆</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Happy New Year 🎉</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
-body{
-  background:radial-gradient(circle at top,#1a1a2e,#0b0b0b);
-  color:#fff;
-  overflow:hidden;
-  text-align:center;
-}
-section{
-  min-height:100vh;
-  display:none;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
-}
-.show{display:flex}
-button{
-  padding:10px 22px;
-  border:none;
-  border-radius:20px;
-  background:#ffd369;
-  font-weight:600;
-  margin-top:15px;
-  cursor:pointer;
-}
-input,textarea{
-  padding:10px;
-  border-radius:10px;
-  border:none;
-  width:240px;
-  margin-top:10px;
-}
-textarea{height:90px}
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Poppins, sans-serif;
+    }
 
-/* animations */
-@keyframes shake{
-  0%{transform:translateX(0)}
-  25%{transform:translateX(-5px)}
-  50%{transform:translateX(5px)}
-  75%{transform:translateX(-5px)}
-  100%{transform:translateX(0)}
-}
-@keyframes breathe{
-  0%{opacity:.9}
-  50%{opacity:.6}
+    body{
+      background: radial-gradient(circle at top, #1a1a2e, #0b0b0b);
+      color:#fff;
+      height:100vh;
+      overflow:hidden;
+      text-align:center;
+    }
+
+    button{
+      margin-top:40vh;
+      padding:14px 30px;
+      font-size:18px;
+      border:none;
+      border-radius:30px;
+      background:linear-gradient(45deg,#ff0080,#ff8c00);
+      color:white;
+      cursor:pointer;
+    }
+
+    section{
+      min-height:100vh;
+      display:none;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      padding:20px;
+    }
+
+    .show{
+      display:flex;
+    }
+
+    h1{
+      font-size:42px;
+      margin-bottom:15px;
+      animation: glow 2s infinite alternate;
+    }
+
+    p{
+      font-size:20px;
+      max-width:500px;
+    }
+
+    @keyframes glow{
+      from{ text-shadow:0 0 10px #ff0080; }
+      to{ text-shadow:0 0 25px #ffcc00; }
+    }
+
+    .confetti{
+      position:fixed;
+      width:10px;
+      height:10px;
+      background:red;
+      animation:fall 3s linear infinite;
+    }
+
+    @keyframes fall{
+      0%{ transform:translateY(-100vh); }
+      100%{ transform:translateY(100vh); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <button onclick="start()">Click for Surprise 🎁</button>
+
+  <section id="main">
+    <h1>🎆 Happy New Year 2026 🎆</h1>
+    <p>
+      Dear my friend 💖<br>
+      May this year bring happiness, success and lots of smiles ✨  
+    </p>
+  </section>
+
+  <script>
+    function start(){
+      document.querySelector("button").style.display="none";
+      document.getElementById("main").classList.add("show");
